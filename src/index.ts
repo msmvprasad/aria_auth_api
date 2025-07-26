@@ -1,6 +1,8 @@
 import express from 'express';
 import db from './db';
 import * as appInsights from 'applicationinsights';
+import { validateToken } from './auth';
+import userRoutes from './routes/users';
 
 // Initialize Azure Application Insights if a connection string or
 // instrumentation key is provided.  This will automatically collect
@@ -23,6 +25,9 @@ const port = process.env.PORT || 3000;
 
 // Built-in middleware to parse JSON bodies
 app.use(express.json());
+
+// Protect API routes with the token validator
+app.use('/users', validateToken, userRoutes);
 
 /**
  * Root route

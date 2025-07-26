@@ -1,0 +1,25 @@
+{
+  "name": "express-typescript-knex-mysql2-appinsights",
+  "version": "1.0.0",
+  "description": "A simple Express.js server written in TypeScript using Knex.js with a MySQL database and integrated with Azure Application Insights.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "applicationinsights": "^3.0.0",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "mysql2": "^3.9.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.5.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
